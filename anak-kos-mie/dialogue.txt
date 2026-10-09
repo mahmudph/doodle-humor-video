@@ -1,0 +1,11 @@
+B1 | BAGAS: Guys, tutorial mie hemat satu bungkus tiga kali makan.
+B2 | TIO: Airnya dikit amat, mateng kagak tuh?
+B2 | BAGAS: Irit gas, bro. Air dikit mateng cepet.
+B3 | TIO: Terus kenapa mie-nya lu remas-remas?
+B3 | BAGAS: Biar muat panci kecil, biar hemat juga.
+B4 | TIO: Bumbu kenapa cuma setengah?
+B4 | BAGAS: Setengah sekarang, setengah buat besok.
+B5 | BAGAS: Loh kok mati? Mie-nya kurang air ya?
+B5 | TIO: Gasnya habis dari kemarin, bro.
+B6 | BAGAS: Jadi yang habis bukan mie gue...
+B6 | TIO: Gaya hemat lu yang habis duluan.

@@ -1,0 +1,11 @@
+L1 | BAGAS: Waduh, hujan deres banget.
+L2 | TIO: Bang, berhenti dulu, gue gak bawa jas hujan.
+L3 | BAGAS: Tenang, gue ada satu.
+L4 | TIO: Satu doang? Buat siapa?
+L5 | BAGAS: Buat lu aja, gue tahan.
+L6 | TIO: Gak usah bang, gue tahan aja.
+L7 | BAGAS: Yaudah, gue pakai sendiri.
+L8 | TIO: Bang, tungguin...
+L9 | BAGAS: Nih, pakai aja.
+L10 | TIO: Bang, punggung lu basah.
+L11 | BAGAS: Yang penting niatnya baik, yang basa biar Allah yang atur.

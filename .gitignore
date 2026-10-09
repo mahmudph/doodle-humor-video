@@ -1,0 +1,18 @@
+# intermediates (regenerable)
+**/scenes/*.mp4
+**/scenes/*-line-*.mp3
+**/scenes/*-voice.mp3
+**/scenes/*.ass
+**/scenes/*-cap.json
+**/scenes/*-concat.txt
+**/scenes/*-side.png
+**/scenes/*-overshoulder.png
+**/concat.txt
+**/final-raw.mp4
+**/lines.json
+**/captions.ass
+**/audio/
+# superseded finals (keep only latest per episode)
+final-30s.mp4
+final-v*.mp4
+final-sfx.mp4
