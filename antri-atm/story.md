@@ -1,10 +1,11 @@
 # Antri ATM, Saldo Bikin Kaget
 
-Bagas antre di depan ATM jam 18.45. Uang habis sejak beli mie ayam siang tadi.
-Antrean panjang, sinyal HP tinggal 1 bar. Akhirnya giliran tiba.
+Bagas antre di depan ATM jam 18.45. HP sinyal 1 bar, loading lama.
+Akhirnya giliran tiba. Bagas masukkan kartu, cek saldo.
+Layar muncul: Saldo Rp15.000. Bagas kaget — tanggal tua emang nggak pernah gagal bikin gue miskin.
+Cuma cukup beli mi instan, telurnya mimpi aja dulu.
+Tio datang, ngajak makan mi di rumah, traktir.
+Bagas terharu berlebihan, separuh harta untuk Tio.
+Tio bingung, deadpan: utang Bagas kemarin kapan dibayar?
+Persahabatan diuji.
 
-Bagas masukkan kartu, pilih cek saldo, menunggu loading yang lama.
-Layar muncul: Saldo Rp15.000. Bagas kaget — lupa transfer gaji ke tabungan,
-sisa uang harian tinggal cukup buat mie instan.
-
-Tio datang naik sepeda, melihat ekspresi Bagas, lalu mengajak makan mie bareng.

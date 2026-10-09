@@ -1,6 +1,9 @@
-[frustrated] BAGAS: Udah setengah jam antre, pas mau cek saldo... eh.
-[shocked] BAGAS: Rp15.000?? Emang nggak transfer gaji tadi?
-[resigned] BAGAS: Maksudnya... uang gajian ya sudah akhir bulan.
-[anxious] BAGAS: Cuma buat beli mie instan aja nih...
-[cheerful] TIO: Yaudah, makan mie bareng aja, aku pulangin.
-[grateful] BAGAS: Tio, kamu paling good person di dunia ini.
+[frustrated] BAGAS: Udah setengah jam antre, semoga saldo gue masih aman...
+[shocked] BAGAS: HAH?! Cuma lima belas ribu?!
+[resigned] BAGAS: Ya ampun, tanggal tua emang nggak pernah gagal bikin gue miskin.
+[worried] BAGAS: Duit segini cuma cukup buat beli mi instan. Telurnya? Ya, mimpi aja dulu.
+[cheerful] TIO: Wkwkwk, udah, makan mi di rumah gue aja. Gue traktir!
+[overly emotional] BAGAS: TIOOO! Mulai hari ini, separuh hartaku adalah milikmu!
+[TIO menatap BAGAS dengan bingung.]
+[deadpan] TIO: Gas, utang lu yang kemarin kapan dibayar?
+[awkward] BAGAS: ...Persahabatan kita sedang diuji, Tio.
