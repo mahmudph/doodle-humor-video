@@ -14,12 +14,12 @@ LINES = [
     ("shot-01", V1, "[frustrated] Udah setengah jam antre, semoga saldo gue masih aman...", "aman"),
     ("shot-02", V1, "[shocked] HAH?! Cuma lima belas ribu?!", "lima belas ribu"),
     ("shot-03", V1, "[resigned] Ya ampun, tanggal tua emang nggak pernah gagal bikin gue miskin.", "tanggal tua"),
-    ("shot-04", V1, "[worried] Duit segini cuma cukup buat beli mi instan. Telurnya? Ya, mimpi aja dulu.", "mimpi"),
-    ("shot-05", V2, "[cheerful] Wkwkwk, udah, makan mi di rumah gue aja. Gue traktir!", "traktir"),
-    ("shot-06", V1, "[overly emotional] TIOOO! Mulai hari ini, separuh hartaku adalah milikmu!", "milikmu"),
+    ("shot-04", V1, "[anxious] Duit segini cuma cukup buat beli mi instan. Telurnya? Ya, mimpi aja dulu.", "mimpi"),
+    ("shot-05", V2, "[cheerful] Haha, udah, makan mi di rumah gue aja. Gue traktir!", "traktir"),
+    ("shot-06", V1, "[cheerful] TIOOO! Mulai hari ini, separuh hartaku adalah milikmu!", "milikmu"),
     ("shot-07", V2, ".", "none"),
-    ("shot-08", V2, "[deadpan] Gas, utang lu yang kemarin kapan dibayar?", "dibayar"),
-    ("shot-09", V1, "[awkward] ...Persahabatan kita sedang diuji, Tio.", "diuji"),
+    ("shot-08", V2, "[calm] Gas, utang lu yang kemarin kapan dibayar?", "dibayar"),
+    ("shot-09", V1, "[resigned] ...Persahabatan kita sedang diuji, Tio.", "diuji"),
 ]
 
 ZOOM = {
@@ -92,16 +92,41 @@ def main():
     final_raw = f"{P}/final-raw.mp4"
     sh(f"{FF} -v error -f concat -safe 0 -i {concat_txt} -c copy {final_raw} -y")
 
+    ad = f"{P}/audio"
     import glob
     bgms = sorted(glob.glob("/home/mahmud/.hermes/cache/scratch/bgm-*.mp3"))
     final = f"{P}/final.mp4"
-    if bgms:
-        sh(f"{FF} -v error -i {final_raw} -i {bgms[0]} "
-           f'-filter_complex "[1:a]volume=0.12,atrim=0:30,asetpts=PTS-STARTPTS[bgm];'
-           f'[0:a][bgm]amix=inputs=2:duration=first:dropout_transition=0[aout]" '
-           '-map 0:v -map "[aout]" -c:v copy -c:a aac -shortest -y ' + final)
-    else:
-        sh(f"cp {final_raw} {final}")
+
+    # SFX placement from cumulative clip starts (verified ojol-hujan recipe)
+    durs = [dur(c) for c in clips]
+    starts = {}
+    t = 0.0
+    for (shot, *_), d_ in zip(LINES, durs):
+        starts[shot] = int(t * 1000)
+        t += d_
+    total_ms = int(t * 1000)
+
+    click = f"{ad}/sfx-click.mp3"       # receipt/ATM print at balance reveal (shot-02)
+    trom = f"{ad}/sfx-trombone.mp3"     # sad trombone at punchline (shot-08)
+    have_click = os.path.exists(click)
+    have_trom  = os.path.exists(trom)
+    n_in = 2 + have_click + have_trom
+
+    fc = [f"[1:a]volume=0.12,atrim=0:{round(t)},asetpts=PTS-STARTPTS[bgm]"]
+    idx = 2
+    labels = ["[0:a]", "[bgm]"]
+    if have_click:
+        fc.append(f"[{idx}:a]adelay={starts.get('shot-02',0)}|{starts.get('shot-02',0)},volume=0.7[click]")
+        labels.append("[click]"); idx += 1
+    if have_trom:
+        fc.append(f"[{idx}:a]adelay={starts.get('shot-08',0)}|{starts.get('shot-08',0)},volume=0.5[trom]")
+        labels.append("[trom]"); idx += 1
+    fc.append("".join(labels) + f"amix=inputs={n_in}:duration=first:dropout_transition=0[aout]")
+    inputs = f"-i {bgms[0]}" if bgms else "-f lavfi -i anullsrc=r=44100:cl=stereo"
+    inputs += (f" -i {click}" if have_click else "") + (f" -i {trom}" if have_trom else "")
+    sh(f"{FF} -v error -i {final_raw} {inputs} "
+       f'-filter_complex "{";".join(fc)}" '
+       '-map 0:v -map "[aout]" -c:v copy -c:a aac -shortest -y ' + final)
 
     d = dur(final)
     print(f"FINAL: {final} duration={round(d,1)}s size={os.path.getsize(final)}B")
