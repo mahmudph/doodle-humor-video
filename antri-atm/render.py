@@ -119,9 +119,12 @@ def main():
         fc.append(f"[{idx}:a]adelay={starts.get('shot-02',0)}|{starts.get('shot-02',0)},volume=0.7[click]")
         labels.append("[click]"); idx += 1
     if have_trom:
-        # trim trombone so it ENDS at shot-09 start (no overlap into last dialog)
-        t_end = max(0.5, starts.get('shot-09', total_ms) - starts.get('shot-08', 0)) / 1000.0
-        fc.append(f"[{idx}:a]atrim=0:{t_end:.2f},asetpts=PTS-STARTPTS,adelay={starts.get('shot-08',0)}|{starts.get('shot-08',0)},volume=0.5[trom]")
+        # trim trombone to END before shot-09 with a 0.35s fade-out.
+        # hard cut mid-sustain leaves an audible pop in the last dialog.
+        t_end = max(0.6, (starts.get('shot-09', total_ms) - starts.get('shot-08', 0)) / 1000.0)
+        st = max(0.0, t_end - 0.35)
+        fc.append(f"[{idx}:a]atrim=0:{t_end:.2f},afade=t=out:st={st:.2f}:d=0.35,"
+                  f"asetpts=PTS-STARTPTS,adelay={starts.get('shot-08',0)}|{starts.get('shot-08',0)},volume=0.5[trom]")
         labels.append("[trom]"); idx += 1
     fc.append("".join(labels) + f"amix=inputs={n_in}:duration=first:dropout_transition=0[aout]")
     inputs = f"-i {bgms[0]}" if bgms else "-f lavfi -i anullsrc=r=44100:cl=stereo"
