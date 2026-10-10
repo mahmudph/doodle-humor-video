@@ -6,4 +6,4 @@
 [cheerful] BAGAS: TIOOO! Mulai hari ini, separuh hartaku adalah milikmu!
 [TIO menatap BAGAS dengan bingung.]
 [calm] TIO: Gas, utang lu yang kemarin kapan dibayar?
-[resigned] BAGAS: ...Persahabatan kita sedang diuji, Tio.
+[resigned] BAGAS: Persahabatan kita sedang diuji, Tio.
