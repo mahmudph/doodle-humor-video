@@ -19,7 +19,7 @@ LINES = [
     ("shot-06", V1, "[cheerful] TIOOO! Mulai hari ini, separuh hartaku adalah milikmu!", "milikmu"),
     ("shot-07", V2, ".", "none"),
     ("shot-08", V2, "[calm] Gas, utang lu yang kemarin kapan dibayar?", "dibayar"),
-    ("shot-09", V1, "[resigned] Persahabatan kita sedang diuji, Tio.", "diuji"),
+    ("shot-09", V1, "Persahabatan kita sedang diuji, Tio.", "diuji"),
 ]
 
 ZOOM = {
