@@ -12,7 +12,7 @@ V2 = "ee65e2ec8bfc4883961761d581dff597"  # TIO
 
 LINES = [
     ("shot-01", V1, "[frustrated] Udah setengah jam antre, semoga saldo gue masih aman...", "aman"),
-    ("shot-02", V1, "[shocked] HAH?! Cuma lima belas ribu?!", "lima belas ribu"),
+    ("shot-02", V1, "[shocked] HAH?! Cuma lima ribu?!", "lima ribu"),
     ("shot-03", V1, "[resigned] Ya ampun, tanggal tua emang nggak pernah gagal bikin gue miskin.", "tanggal tua"),
     ("shot-04", V1, "[anxious] Duit segini cuma cukup buat beli mi instan. Telurnya? Ya, mimpi aja dulu.", "mimpi"),
     ("shot-05", V2, "[cheerful] Haha, udah, makan mi di rumah gue aja. Gue traktir!", "traktir"),
